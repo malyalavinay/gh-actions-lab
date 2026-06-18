@@ -40,7 +40,15 @@ jobs:
             - name: Run tests
               run: |
                 export PYTHONPATH=.
-                pytest -v
+                pytest -v --junitxml=test-results.xml
+
+            - name: Upload test report
+              uses: actions/upload-artifact@v4
+              with:
+                name: test-report
+                path: test-results.xml
+
+                
 
      
 

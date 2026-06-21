@@ -54,6 +54,12 @@ jobs:
                 name: test-report
                 path: test-results.xml
 
+    build:
+      needs: test
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Building application"
+        
 
 
      

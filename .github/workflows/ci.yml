@@ -45,7 +45,7 @@ jobs:
 
             - name: Run tests
               run: |
-                expor PYTHONPATH=.
+                export PYTHONPATH=.
                 pytest -v --junitxml=test-results.xml
 
             - name: Upload test report

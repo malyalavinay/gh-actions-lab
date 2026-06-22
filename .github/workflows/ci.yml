@@ -3,8 +3,12 @@ name: Python CI Pipeline
 on:
     push:
         branches: [main]
+
     pull_request:
         branches: [main]
+
+    workflow_dispatch:
+    
 
 env:
   APP_NAME: Calculator-App
@@ -60,9 +64,15 @@ jobs:
       steps:
         - run: echo "Building application"
 
-        - name: Deploy
+        - name: Deploy if Main
           if: github.ref == 'refs/heads/main'
           run: echo "Deploying"
+
+        - name: PR only step
+          if: github.event_name == 'pull_request'
+          run: echo "This is running because of a PR"
+
+        
 
 
 

@@ -60,6 +60,10 @@ jobs:
       steps:
         - run: echo "Building application"
 
+        - name: Deploy
+          if: github.ref == 'refs/heads/main'
+          run: echo "Deploying"
+
 
 
      

@@ -8,6 +8,11 @@ on:
         branches: [main]
 
     workflow_dispatch:
+      inputs:
+        environment:
+          description: 'Choose environment'
+          required: true
+          default: dev
     
 
 env:
@@ -71,6 +76,13 @@ jobs:
         - name: PR only step
           if: github.event_name == 'pull_request'
           run: echo "This is running because of a PR"
+
+        - name: Manual trigger test
+          run: echo "workflow started manually"
+
+        - name: Print Environment'
+          run: echo "Deploying to ${{github.event.inputs.environment}}"
+
 
         
 

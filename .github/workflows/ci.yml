@@ -95,7 +95,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - run: echo "Deploying application" |
-               echo "Version = $ {{needs.build.outputs.version}}"
+               echo "Version = ${{needs.build.outputs.version}}"
      
 
         

@@ -6,3 +6,6 @@ on:
 jobs:
     call-reusable:
        uses: ./.github/workflows/reusable-test.yml
+
+       with:
+        app_name: Calculator-App

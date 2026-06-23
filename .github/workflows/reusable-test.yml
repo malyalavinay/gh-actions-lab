@@ -2,6 +2,10 @@ name: Reusable test workflow
  
 on:
     workflow_call:
+        inputs:
+            app_name:
+                required: true
+                type: string
 
 jobs:
     test:
@@ -10,3 +14,5 @@ jobs:
         steps:
             - name: Hello
               run: echo "Running reusable workflow"
+
+            - run: echo "App = ${{ inputs.app_name }}"

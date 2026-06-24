@@ -1,0 +1,15 @@
+name: Composite Action demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+    demo:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: run composite action
+              uses: ./.github/actions/greet
+              

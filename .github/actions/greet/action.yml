@@ -1,0 +1,11 @@
+name: Greeting Action
+description: simple composite action
+runs:
+ using: composite
+
+ steps:
+   - name: Say Hello
+     shell: bash
+     run: echo "Hello from composite action"
+
+

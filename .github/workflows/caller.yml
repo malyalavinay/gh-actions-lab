@@ -7,5 +7,5 @@ jobs:
     call-reusable:
        uses: ./.github/workflows/reusable-test.yml
 
-       with:
-        app_name: Calculator-App
+       secrets:
+        demo_secret: ${{secrets.DEMO_SECRET}}

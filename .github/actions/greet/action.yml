@@ -7,5 +7,3 @@ runs:
    - name: Say Hello
      shell: bash
      run: echo "Hello from composite action"
-
-

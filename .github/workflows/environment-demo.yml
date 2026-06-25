@@ -12,3 +12,5 @@ jobs:
           
         steps:
           - run: echo "Deploying to Production environment"
+          - run: echo "${{secrets.API_KEY}}"
+          
